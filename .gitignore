@@ -136,6 +136,8 @@ dmypy.json
 ###### C++ ######
 #################
 
+.vscode/*
+
 # Ignore g++ compiled debug files
 *.dSYM
 
@@ -151,3 +153,5 @@ qr_setup_images/
 camera_matrix*
 
 *.DS_Store
+
+

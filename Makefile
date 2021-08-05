@@ -3,13 +3,17 @@ CC = g++
 CFLAGS = -g -Wall
 OPENCV = $(shell pkg-config --cflags --libs opencv)
 
-TARGET = 3D_constructor_exec
+MAIN = main_exec
+ARUCO = aruco_exec
 
-all: $(TARGET)
+all:$(MAIN)
 
-$(TARGET): main.cpp
-	$(CC) $(OPENCV) $(CFLAGS) -o $(TARGET) main.cpp
+$(MAIN): main.cpp
+	$(CC) $(OPENCV) $(CFLAGS) -o $(MAIN) main.cpp
+
+$(ARUCO): aruco_marker_detection.cpp
+	$(CC) $(OPENCV) $(CFLAGS) -o $(ARUCO) aruco_marker_detection.cpp
 
 clean:
-	$(RM) $(TARGET) 
-	$(RM) -r $(TARGET).dSYM
+	$(RM) $(MAIN) 
+	$(RM) -r $(MAIN).dSYM
