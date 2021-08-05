@@ -140,9 +140,14 @@ dmypy.json
 *.dSYM
 
 # Ignore executables
-./*_exec
+*_exec
 
 # Ignore chessboard files
-./chessboard_images
+chessboard_images/
+
+# Ignore images of object
+qr_setup_images/
+
+camera_matrix*
 
 *.DS_Store
