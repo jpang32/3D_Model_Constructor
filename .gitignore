@@ -1,3 +1,6 @@
+##### Python #####
+##################
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -129,7 +132,17 @@ dmypy.json
 .pyre/
 
 
+
+###### C++ ######
+#################
+
 # Ignore g++ compiled debug files
 *.dSYM
+
+# Ignore executables
+./*_exec
+
+# Ignore chessboard files
+./chessboard_images
 
 *.DS_Store

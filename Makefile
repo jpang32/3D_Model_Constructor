@@ -3,7 +3,7 @@ CC = g++
 CFLAGS = -g -Wall
 OPENCV = $(shell pkg-config --cflags --libs opencv)
 
-TARGET = 3D_constructor
+TARGET = 3D_constructor_exec
 
 all: $(TARGET)
 
