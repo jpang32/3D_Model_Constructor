@@ -138,16 +138,18 @@ dmypy.json
 
 .vscode/*
 
+# 
+
 # Ignore g++ compiled debug files
 *.dSYM
 
-# Ignore executables
-*_exec
+# Executables
+./build/*
 
-# Ignore chessboard files
+# Chessboard files
 chessboard_images/
 
-# Ignore images of object
+# Images of object
 qr_setup_images/
 
 camera_matrix*
