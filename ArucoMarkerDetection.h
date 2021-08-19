@@ -25,16 +25,22 @@ class ArucoMarkerDetection {
 
         Ptr<aruco::Dictionary> dictionary_;
 
+        void organizeMarkerCorners();
+
     public:
         //ArucoMarkerDetection(aruco::PREDEFINED_DICTIONARY_NAME dictionary);
         ArucoMarkerDetection(aruco::PREDEFINED_DICTIONARY_NAME dictionary, Mat img1, Mat img2);
 
         Mat img1();
         Mat img2();
+        std::vector<int> markerIds1();
+        std::vector<int> markerIds2();
+        std::vector<std::vector<Point2f> > markerCorners1();
+        std::vector<std::vector<Point2f> > markerCorners2();
         Mat camera_matrix();
 
         void detectMarkers();
-        Mat showDetectedMarkers();
+        void drawDetectedMarkers(Mat&);
 
 
 };

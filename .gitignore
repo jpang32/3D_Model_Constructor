@@ -138,8 +138,6 @@ dmypy.json
 
 .vscode/*
 
-# 
-
 # Ignore g++ compiled debug files
 *.dSYM
 

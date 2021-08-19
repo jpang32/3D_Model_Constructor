@@ -40,7 +40,28 @@ int main(int argc, char** argv) {
     ArucoMarkerDetection amd = ArucoMarkerDetection(aruco::DICT_7X7_50, img1, img2);
 
     amd.detectMarkers();
-    amd.showDetectedMarkers();
+    Mat testImage;
+    amd.drawDetectedMarkers(testImage);
+
+    std::vector<Point2f> corners1_flattened;
+    std::vector<Point2f> corners2_flattened;
+
+    for(const auto &v: amd.markerCorners1()) corners1_flattened.insert(corners1_flattened.end(), v.begin(), v.end());
+    for(const auto &v: amd.markerCorners2()) corners2_flattened.insert(corners2_flattened.end(), v.begin(), v.end());                                                                                       
+
+    imshow("", testImage);
+    waitKey(0);
+
+    Mat fundamental = findFundamentalMat(corners1_flattened, corners2_flattened, FM_RANSAC, 2, 0.95);
+
+    //Next step: draw correspondences between images with fundamental matrix
+    
+
+
+    // Calculate essential matrix
+    //findFundamentalMat(amd.)
+
+    //fundamentalFromEssential()
 
     return 0;
 }
